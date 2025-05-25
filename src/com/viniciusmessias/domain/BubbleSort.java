@@ -1,6 +1,7 @@
 package com.viniciusmessias.domain;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class BubbleSort {
@@ -20,9 +21,7 @@ public class BubbleSort {
         for (int i = 0; i < ascending.size() - 1; i++) {
             for (int j = 0; j < ascending.size() - 1 - i; j++) {
                 if (ascending.get(j) > ascending.get(j + 1)) {
-                    int temporary = ascending.get(j);
-                    ascending.set(j, ascending.get(j + 1));
-                    ascending.set(j + 1, temporary);
+                    Collections.swap(ascending, j, j + 1);
                 }
             }
         }
@@ -33,9 +32,7 @@ public class BubbleSort {
         for (int i = 0; i < descending.size() - 1; i++) {
             for (int j = 0; j < descending.size() - 1 - i; j++) {
                 if (descending.get(j) < descending.get(j + 1)) {
-                    int temporary = descending.get(j);
-                    descending.set(j, descending.get(j + 1));
-                    descending.set(j + 1, temporary);
+                    Collections.swap(descending, j, j + 1);
                 }
             }
         }
